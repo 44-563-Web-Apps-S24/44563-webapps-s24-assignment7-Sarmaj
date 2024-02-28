@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Akanksha Speed Check</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <body>
+    <h3>MAJJI SARVANI-Speed check</h3>
+  <div id="timer">Your time</div>
+  <div id="counter">Count</div>
+  <div>
+    <button class="btn btn-info" onclick="startTime()">Start Timer</button>
+    <button class="btn btn-success" onclick="recordTime()">Stop Timer</button>
+  </div>
+  <script>
+  let stopTime;
+  function recordTime() {
+    stopTime = Date.now();
+    console.log(stopTime);
+  }
+
+  function startTime() {
+    var startTime = Date.now();
+    let randomv = Math.floor(Math.random() * 9) + 2;
+    for (let i = 0; i < randomv; i++) {
+      setTimeout(function () {
+        document.getElementById("counter").innerHTML = i;
+      }, (4 - i) * 1000);
+    }
+    setTimeout(function() {
+      if (typeof stopTime === "undefined") {
+        document.getElementById("timer").innerHTML = "Too Slow";
+      } else {
+        stopTime = Date.now();
+        let elapsedTime = stopTime - startTime;
+        document.getElementById("timer").innerHTML = "Time was " + elapsedTime;
+      }
+    }, 4000);
+  }
+  </script>
+</body>
+</html>
