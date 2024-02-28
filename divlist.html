@@ -1,64 +1,81 @@
 <!DOCTYPE html>
-<html> 
-	<head>
-	<title>SARVANI builds list with divs</title>  
+<html>
+
+<head>
+	<title>Assignment 7</title>
 	<style>
-    .flex-container {
-      display: flex;  flex-direction:row;
-      background-color: brown;
-  }
+		.flex-container {
+			display: flex;
+			flex-direction: row;
+			background-color: yellowgreen;
+		}
 
-.flex-container > div {  /*div children of the flex container*/
-  background-color: #f1f1f1; 
-  margin: 11px;  padding: 25px;  font-size: 35px;
-}
+		.flex-container>div {
+			/*div children of the flex container*/
+			background-color: #669b78;
+			margin: 10px;
+			padding: 20px;
+			font-size: 30px;
+		}
 
-/* Responsive layout */
-@media (max-width: 500px) { 
-	 .flex-container{
-		 flex-direction:column;
-		 background-color: green;
-	  }
-	}
-</style>
+		/* Responsive layout */
+		@media (max-width: 600px) {
+			.flex-container {
+				flex-direction: column;
+				background-color: BROWN;
+			}
+		}
+	</style>
 </head>
+
+
+
 <body>
-	<h1>MAJJI SARVANI builds list with divs</h1>
-	<input type="text" id="inputvalue">
-	<div class="flex-container divlist" id="target"></div>
-	<p> Press the button to create an new element of type div and then add it to the container.</p>
+
+	<div class="container">
+		<h2>MAJJI SARVANI - builds list with divs</h2>
+		<input type="text" id="text">
 		<button onclick="makeNewDiv()">Add end</button>
+		<button onclick="addFront()">Add front</button>
 		<button onclick="remove()">Remove</button>
- 		<button onclick="addFront()">Add Front</button>	
+		<div class="flex-container" id="target">
+			<div class="divlist">First item</div>
+			<div class="divlist">Second item</div>
+			<div class="divlist">Third item</div>
+		</div>
+	</div>
+
 </body>
 <script>
-	var value_input = document.getElementById("inputvalue").value;
-	var value_output = document.getElementById("inputs")
-	value_output.innerHTML = value_input;
-	value_output.className ="divlist";
-	function makeNewDiv(){
-		let value_input = document.getElementById("inputvalue").value;
+	function makeNewDiv() {
+		/* make the div and its text */
 		let element = document.createElement("div")
-		element.className ="divlist";
-		element.innerHTML = value_input
+		element.innerHTML = document.getElementById('text').value
 		element.style.color = "orange"
+		/* add it to the container */
 		let container = document.getElementById('target')
+		element.setAttribute("class", " divlist")
 		container.appendChild(element)
+
 	}
 	function remove() {
-      var thelist = document.getElementsByClassName("divlist");
-      var lengths = thelist.length;
-      if (lengths > 0) {
-        var i = Math.floor(lengths / 2);
-        thelist[i].remove();
-      }
-    }
-	function addFront(){
-		let value_input = document.getElementById("inputvalue").value;
-		var newItem = document.createElement('div');
-		newItem.innerHTML =value_input;
-		let container = document.getElementById('target');
-		container.insertBefore(newItem,container.firstChild);
+		let divListItems = document.getElementsByClassName('divlist');
+		let length = divListItems.length;
+		if (length > 0) {
+			let middleItem = Math.floor(length / 2);
+			divListItems[middleItem].remove();
+		}
+	}
+	function addFront() {
+		/* make the div and its text */
+		let element = document.createElement("div")
+		element.innerHTML = document.getElementById('text').value
+		element.style.color = "orange"
+		/* add it to the container */
+		let container = document.getElementById('target')
+		element.setAttribute("class", " divlist")
+		container.insertBefore(element, container.firstChild);
 	}
 </script>
+
 </html>
