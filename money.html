@@ -1,168 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 07</title>
-    <link rel="stylesheet" href="./style.css">
+    <style>
+        .container {
+            display: flex;
+        }
+    </style>
+    <title>Web-apps assignment-7</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" 
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" 
+    integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
 </head>
-
 <body>
+    <h1>Find the coins by MAJJI SARVANI</h1>
+    <div  style="background-color: rgb(215, 233, 250);">Click on the locations to find coins, beware the monster</div>
+    <div id="locations" class=" bg-success">Number of locations checked is zero</div>
+    <div id="score"  style="background-color:rgb(255, 255, 240);">Score is zero</div>
+    <div class=" bg-warning" onclick="help()">Click for help.</div>
+    <div id="help"  style="background-color:blanchedalmond">Help report</div>
     <div class="container">
-        <h1>Find the coins by - MAJJI SARVANI</h1>
-        <div class="instructions">
-
-            <div>Click on the locations to find coins, beware the monster</div>
-            <div id="locations">Number of locations checked is zero.</div>
-            <div id="score">Score is Zero.</div>
-            <div onclick=help()>Click for Help.</div>
-            <div id="help">Help report</div>
-        </div>
-        <div class="game-container">
-            <div class="gameboard">
-                <div class="row">
-                    <div class="col"> <img class="image" id="image-01" onclick=check(0) src= "building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-02" onclick="check(1)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-03" onclick="check(2)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-04" onclick="check(3)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-05" onclick="check(4)" src="building.jpg"
-                            alt=""> </div>
-                </div>
-                <div class="row">
-                    <div class="col"> <img class="image" id="image-06" onclick="check(5)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-07" onclick="check(6)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-08" onclick="check(7)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-09" onclick="check(8)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-10" onclick="check(9)" src="building.jpg"
-                            alt=""> </div>
-                </div>
-                <div class="row">
-                    <div class="col"> <img class="image" id="image-11" onclick="check(10)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-12" onclick="check(11)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-13" onclick="check(12)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-14" onclick="check(13)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-15" onclick="check(14)" src="building.jpg"
-                            alt=""> </div>
-                </div>
-                <div class="row">
-                    <div class="col"> <img class="image" id="image-16" onclick="check(15)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-17" onclick="check(16)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-18" onclick="check(17)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-19" onclick="check(18)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-20" onclick="check(19)" src="building.jpg"
-                            alt=""> </div>
-                </div>
-                <div class="row">
-                    <div class="col"> <img class="image" id="image-21" onclick="check(20)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-22" onclick="check(21)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-23" onclick="check(22)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-24" onclick="check(23)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-25" onclick="check(24)" src="building.jpg"
-                            alt=""> </div>
-                </div>
-                <div class="row">
-                    <div class="col"> <img class="image" id="image-26" onclick="check(25)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-27" onclick="check(26)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-28" onclick="check(27)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-29" onclick="check(28)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-30" onclick="check(29)" src="building.jpg"
-                            alt=""> </div>
-                </div>
-                <div class="row">
-                    <div class="col"> <img class="image" id="image-31" onclick="check(30)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-32" onclick="check(31)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-33" onclick="check(32)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-34" onclick="check(33)" src="building.jpg"
-                            alt=""> </div>
-                    <div class="col"> <img class="image" id="image-35" onclick="check(34)" src="building.jpg"
-                            alt=""> </div>
-                </div>
-            </div>
+        <div class="row">
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img0" width="80" height="80" onclick="check(0)"></div>
+            <div class="col-md-2 img-thumbnail"><img src="building.jpg" id="img1" width="80" height="80" onclick="check(1)"></div>
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img2" width="80" height="80" onclick="check(2)"></div>
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img3" width="80" height="80" onclick="check(3)"></div>
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img4" width="80" height="80" onclick="check(4)"></div>
         </div>
     </div>
-
-    <script>
-        let positionIds = ["image-01", "image-02", "image-03", "image-04", "image-05",
-            "image-06", "image-07", "image-08", "image-09", "image-10",
-            "image-11", "image-12", "image-13", "image-14", "image-15",
-            "image-16", "image-17", "image-18", "image-19", "image-20",
-            "image-21", "image-22", "image-23", "image-24", "image-25",
-            "image-26", "image-27", "image-28", "image-29", "image-30",
-            "image-31", "image-32", "image-33", "image-34", "image-35"];
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img5" width="80" height="80" onclick="check(5)"></div>
+            <div class="col-md-2 img-thumbnail"><img src="building.jpg" id="img6" width="80" height="80" onclick="check(6)"></div>
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img7" width="80" height="80" onclick="check(7)"></div>
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img8" width="80" height="80" onclick="check(8)"></div>
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img9" width="80" height="80" onclick="check(9)"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img10" width="80" height="80" onclick="check(10)"></div>
+            <div class="col-md-2 img-thumbnail"><img src="building.jpg" id="img11" width="80" height="80" onclick="check(11)"></div>
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img12" width="80" height="80" onclick="check(12)"></div>
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img13" width="80" height="80" onclick="check(13)"></div>
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img14" width="80" height="80" onclick="check(14)"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img15" width="80" height="80" onclick="check(15)"></div>
+            <div class="col-md-2 img-thumbnail"><img src="building.jpg" id="img16" width="80" height="80" onclick="check(16)"></div>
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img17" width="80" height="80" onclick="check(17)"></div>
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img18" width="80" height="80" onclick="check(18)"></div>
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img19" width="80" height="80" onclick="check(19)"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img20" width="80" height="80" onclick="check(20)"></div>
+            <div class="col-md-2 img-thumbnail"><img src="building.jpg" id="img21" width="80" height="80" onclick="check(21)"></div>
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img22" width="80" height="80" onclick="check(22)"></div>
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img23" width="80" height="80" onclick="check(23)"></div>
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img24" width="80" height="80" onclick="check(24)"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img25" width="80" height="80" onclick="check(25)"></div>
+            <div class="col-md-2 img-thumbnail"><img src="building.jpg" id="img26" width="80" height="80" onclick="check(26)"></div>
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img27" width="80" height="80" onclick="check(27)"></div>
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img28" width="80" height="80" onclick="check(28)"></div>
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img29" width="80" height="80" onclick="check(29)"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img30" width="80" height="80" onclick="check(30)"></div>
+            <div class="col-md-2 img-thumbnail"><img src="building.jpg" id="img31" width="80" height="80" onclick="check(31)"></div>
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img32" width="80" height="80" onclick="check(32)"></div>
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img33" width="80" height="80" onclick="check(33)"></div>
+            <div class="col-sm-2 img-thumbnail"><img src="building.jpg" id="img34" width="80" height="80" onclick="check(34)"></div>
+        </div>
+    </div>
+<script>
         let score = 0;
         let locations = 0;
         let lastLocation = 0;
-        let fancyCoinLocations = [2, 5, 14, 19, 23, 33];
-        let monsterLocation = 20;
+        const fancyCoinLocations = [2, 5, 14, 19, 23, 33];
+        const monsterLocation = 20;
         let gameOver = false;
 
         function check(position) {
-            if (gameOver == false) {
-                clickedImage = document.getElementById(positionIds[position])
-                if (position == 20) {
-                    clickedImage.setAttribute("src", "monster.jpg")
-                    gameOver = true
-                    score -= 5
-                }
-                else if (fancyCoinLocations.includes(position)) {
-                    clickedImage.setAttribute("src", "fanciercoin 1.jpg")
-                    score += 3
-                }
-                else {
-                    clickedImage.setAttribute("src", "coin.jpg")
-                    score += 1
-                }
-                locations += 1
-                document.getElementById("locations").innerHTML = "Number of locations checked is " + locations + "."
-                document.getElementById("score").innerHTML = "Score is " + score + "."
-                lastLocation = position
-            }
-        }
+    if (gameOver) return;
+    
+    const id = `img${position}`;
+    const img = document.getElementById(id);
+
+    if (img.src.endsWith("building.jpg")) {
+        img.src = "fancier coin 1.jpg";
+        score += 3;
+    } else if (img.src.endsWith("fancier coin 1.jpg")) {
+        img.src = "monster.jpg";
+        gameOver = true;
+        score -= 5;
+    } else if (img.src.endsWith("monster.jpg")) {
+        img.src = "coin.jpg";
+        score += 1;
+    } else if (img.src.endsWith("coin.jpg")) {
+        img.src = "building.jpg";
+    }
+    
+    locations++;
+    lastLocation = position;
+
+    document.getElementById("locations").innerText = `Number of locations checked is ${locations}`;
+    document.getElementById("score").innerText = `Score is ${score}`;
+}
+
 
         function help() {
-            let returnValue = "All Clear"
-            let row = Math.floor(lastLocation / 5);
-            let col = lastLocation % 5;
-            let kinshipLocations = [lastLocation - 1, lastLocation + 1, lastLocation - 5, lastLocation + 5];
-            kinshipLocations.forEach(kinshipLocation => {
-                if (fancyCoinLocations.includes(kinshipLocation))
-                    returnValue = "So close"
-            });
-            if (Math.abs(row - Math.floor(monsterLocation / 5)) <= 1 && Math.abs(col - (monsterLocation % 5)) <= 1) {
-                returnValue = "Grrr"
-            }
-            document.getElementById("help").innerHTML = returnValue
-        }
+            const col = lastLocation % 5;
+            const row = Math.floor(lastLocation / 5);
+            const kinshipLocations = [lastLocation - 1, lastLocation + 1, lastLocation - 5, lastLocation + 5];
 
+            for (const kinship of kinshipLocations) {
+                const adjustedLoc = (kinship + 35) % 35;
+                if (fancyCoinLocations.includes(adjustedLoc)) {
+                    document.getElementById("help").innerText = "So close";
+                    return;
+                }
+            }
+
+            const monsterRow = Math.floor(monsterLocation / 5);
+            const monsterCol = monsterLocation % 5;
+            if (Math.abs(row - monsterRow) <= 1 && Math.abs(col - monsterCol) <= 1) {
+                document.getElementById("help").innerText = "Grr";
+            } else {
+                document.getElementById("help").innerText = "All clear";
+            }
+        }
     </script>
 </body>
-
 </html>
